@@ -1,0 +1,835 @@
+--[[
+- RightAlt to focus textboxes
+- RightControl to toggle ui
+]]
+
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local _102879371212128 = Instance.new("ScreenGui")
+local TopBar = Instance.new("Frame")
+local BG = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local MainFrame = Instance.new("Frame")
+local CFSFrame = Instance.new("Frame")
+local ToggleCFS = Instance.new("TextButton")
+local CFSOn = Instance.new("ImageButton")
+local CFSOff = Instance.new("ImageButton")
+local CFSInfo = Instance.new("TextLabel")
+local CAFSFrame = Instance.new("Frame")
+local ToggleCAFS = Instance.new("TextButton")
+local CAFSOn = Instance.new("ImageButton")
+local CAFSOff = Instance.new("ImageButton")
+local CAFSInfo = Instance.new("TextLabel")
+local FSFrame = Instance.new("Frame")
+local ToggleFS = Instance.new("TextButton")
+local FSOn = Instance.new("ImageButton")
+local FSOff = Instance.new("ImageButton")
+local FSInfo = Instance.new("TextLabel")
+local SAPFrame = Instance.new("Frame")
+local ToggleSAP = Instance.new("TextButton")
+local SAPOn = Instance.new("ImageButton")
+local SAPOff = Instance.new("ImageButton")
+local SAPInfo = Instance.new("TextLabel")
+local CIFrame = Instance.new("Frame")
+local ToggleCI = Instance.new("TextButton")
+local CIOn = Instance.new("ImageButton")
+local CIOff = Instance.new("ImageButton")
+local CIInfo = Instance.new("TextLabel")
+local Msg = Instance.new("TextBox")
+local UICorner_2 = Instance.new("UICorner")
+local Send = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local MsgInfo = Instance.new("TextLabel")
+local HistoryFrame = Instance.new("Frame")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local UIListLayout = Instance.new("UIListLayout")
+local NewMsg = Instance.new("TextLabel")
+local OldMsg = Instance.new("TextLabel")
+local FillerTopBar = Instance.new("Frame")
+local Main = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local History = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local UICorner_6 = Instance.new("UICorner")
+local Title = Instance.new("TextLabel")
+local Minimise = Instance.new("ImageButton")
+local Maximise = Instance.new("ImageButton")
+local ToggleUI = Instance.new("TextButton")
+local Hotbar = Instance.new("Frame")
+local MsgHB = Instance.new("TextBox")
+local UICorner7 = Instance.new("UICorner")
+local UICorner8 = Instance.new("UICorner")
+local HBTitle = Instance.new("TextLabel")
+
+--Properties:
+
+_102879371212128.Name = "1028793712 12128"
+_102879371212128.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+_102879371212128.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+_102879371212128.ResetOnSpawn = false
+
+TopBar.Name = "TopBar"
+TopBar.Parent = _102879371212128
+TopBar.BackgroundColor3 = Color3.fromRGB(43, 43, 52)
+TopBar.BorderSizePixel = 0
+TopBar.Position = UDim2.new(0.330015302, 0, 0.298360646, 0)
+TopBar.Size = UDim2.new(0, 443, 0, 37)
+
+BG.Name = "BG"
+BG.Parent = TopBar
+BG.BackgroundColor3 = Color3.fromRGB(25, 25, 30)
+BG.BorderSizePixel = 0
+BG.Position = UDim2.new(0, 0, 0.730768979, 0)
+BG.Size = UDim2.new(0, 443, 0, 231)
+
+UICorner.Parent = BG
+
+MainFrame.Name = "Main"
+MainFrame.Parent = BG
+MainFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MainFrame.BackgroundTransparency = 1.000
+MainFrame.Size = UDim2.new(0, 443, 0, 231)
+
+CFSFrame.Name = "CFSFrame"
+CFSFrame.Parent = MainFrame
+CFSFrame.BackgroundColor3 = Color3.fromRGB(43, 43, 52)
+CFSFrame.BorderSizePixel = 0
+CFSFrame.Position = UDim2.new(0.627539515, 0, 0.160173163, 0)
+CFSFrame.Size = UDim2.new(0, 30, 0, 30)
+
+ToggleCFS.Name = "ToggleCFS"
+ToggleCFS.Parent = CFSFrame
+ToggleCFS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleCFS.BackgroundTransparency = 1.000
+ToggleCFS.Size = UDim2.new(0, 30, 0, 30)
+ToggleCFS.ZIndex = 3
+ToggleCFS.Font = Enum.Font.SourceSans
+ToggleCFS.Text = ""
+ToggleCFS.TextColor3 = Color3.fromRGB(0, 0, 0)
+ToggleCFS.TextSize = 14.000
+
+CFSOn.Name = "CFSOn"
+CFSOn.Parent = CFSFrame
+CFSOn.BackgroundTransparency = 1.000
+CFSOn.LayoutOrder = 4
+CFSOn.Position = UDim2.new(-7.4505806e-09, 0, 0, 0)
+CFSOn.Size = UDim2.new(0, 30, 0, 30)
+CFSOn.ZIndex = 2
+CFSOn.Image = "rbxassetid://3926305904"
+CFSOn.ImageRectOffset = Vector2.new(644, 204)
+CFSOn.ImageRectSize = Vector2.new(36, 36)
+
+CFSOff.Name = "CFSOff"
+CFSOff.Parent = CFSFrame
+CFSOff.BackgroundTransparency = 1.000
+CFSOff.LayoutOrder = 5
+CFSOff.Size = UDim2.new(0, 30, 0, 30)
+CFSOff.Visible = false
+CFSOff.ZIndex = 2
+CFSOff.Image = "rbxassetid://3926305904"
+CFSOff.ImageRectOffset = Vector2.new(924, 724)
+CFSOff.ImageRectSize = Vector2.new(36, 36)
+
+CFSInfo.Name = "CFSInfo"
+CFSInfo.Parent = CFSFrame
+CFSInfo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CFSInfo.BackgroundTransparency = 1.000
+CFSInfo.Position = UDim2.new(1.29999995, 0, 0, 0)
+CFSInfo.Size = UDim2.new(0, 126, 0, 30)
+CFSInfo.Font = Enum.Font.SourceSansItalic
+CFSInfo.Text = "-- Capitalise first letter"
+CFSInfo.TextColor3 = Color3.fromRGB(255, 255, 255)
+CFSInfo.TextSize = 14.000
+CFSInfo.TextWrapped = true
+CFSInfo.TextXAlignment = Enum.TextXAlignment.Left
+
+CAFSFrame.Name = "CAFSFrame"
+CAFSFrame.Parent = MainFrame
+CAFSFrame.BackgroundColor3 = Color3.fromRGB(43, 43, 52)
+CAFSFrame.BorderSizePixel = 0
+CAFSFrame.Position = UDim2.new(0.627539515, 0, 0.337662339, 0)
+CAFSFrame.Size = UDim2.new(0, 30, 0, 30)
+
+ToggleCAFS.Name = "ToggleCAFS"
+ToggleCAFS.Parent = CAFSFrame
+ToggleCAFS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleCAFS.BackgroundTransparency = 1.000
+ToggleCAFS.Size = UDim2.new(0, 30, 0, 30)
+ToggleCAFS.ZIndex = 3
+ToggleCAFS.Font = Enum.Font.SourceSans
+ToggleCAFS.Text = ""
+ToggleCAFS.TextColor3 = Color3.fromRGB(0, 0, 0)
+ToggleCAFS.TextSize = 14.000
+
+CAFSOn.Name = "CAFSOn"
+CAFSOn.Parent = CAFSFrame
+CAFSOn.BackgroundTransparency = 1.000
+CAFSOn.LayoutOrder = 4
+CAFSOn.Position = UDim2.new(-7.4505806e-09, 0, 0, 0)
+CAFSOn.Size = UDim2.new(0, 30, 0, 30)
+CAFSOn.ZIndex = 2
+CAFSOn.Image = "rbxassetid://3926305904"
+CAFSOn.ImageRectOffset = Vector2.new(644, 204)
+CAFSOn.ImageRectSize = Vector2.new(36, 36)
+
+CAFSOff.Name = "CAFSOff"
+CAFSOff.Parent = CAFSFrame
+CAFSOff.BackgroundTransparency = 1.000
+CAFSOff.LayoutOrder = 5
+CAFSOff.Size = UDim2.new(0, 30, 0, 30)
+CAFSOff.Visible = false
+CAFSOff.ZIndex = 2
+CAFSOff.Image = "rbxassetid://3926305904"
+CAFSOff.ImageRectOffset = Vector2.new(924, 724)
+CAFSOff.ImageRectSize = Vector2.new(36, 36)
+
+CAFSInfo.Name = "CAFSInfo"
+CAFSInfo.Parent = CAFSFrame
+CAFSInfo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CAFSInfo.BackgroundTransparency = 1.000
+CAFSInfo.Position = UDim2.new(1.29999995, 0, 0, 0)
+CAFSInfo.Size = UDim2.new(0, 126, 0, 30)
+CAFSInfo.Font = Enum.Font.SourceSansItalic
+CAFSInfo.Text = "-- Capitalise after \" . \""
+CAFSInfo.TextColor3 = Color3.fromRGB(255, 255, 255)
+CAFSInfo.TextSize = 14.000
+CAFSInfo.TextWrapped = true
+CAFSInfo.TextXAlignment = Enum.TextXAlignment.Left
+
+FSFrame.Name = "FSFrame"
+FSFrame.Parent = MainFrame
+FSFrame.BackgroundColor3 = Color3.fromRGB(43, 43, 52)
+FSFrame.BorderSizePixel = 0
+FSFrame.Position = UDim2.new(0.628000021, 0, 0.860000014, 0)
+FSFrame.Size = UDim2.new(0, 30, 0, 30)
+
+ToggleFS.Name = "ToggleFS"
+ToggleFS.Parent = FSFrame
+ToggleFS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleFS.BackgroundTransparency = 1.000
+ToggleFS.Size = UDim2.new(0, 30, 0, 30)
+ToggleFS.ZIndex = 3
+ToggleFS.Font = Enum.Font.SourceSans
+ToggleFS.Text = ""
+ToggleFS.TextColor3 = Color3.fromRGB(0, 0, 0)
+ToggleFS.TextSize = 14.000
+
+FSOn.Name = "FSOn"
+FSOn.Parent = FSFrame
+FSOn.BackgroundTransparency = 1.000
+FSOn.LayoutOrder = 4
+FSOn.Position = UDim2.new(-0.0333333425, 0, 0, 0)
+FSOn.Size = UDim2.new(0, 30, 0, 30)
+FSOn.ZIndex = 2
+FSOn.Image = "rbxassetid://3926305904"
+FSOn.ImageRectOffset = Vector2.new(644, 204)
+FSOn.ImageRectSize = Vector2.new(36, 36)
+
+FSOff.Name = "FSOff"
+FSOff.Parent = FSFrame
+FSOff.BackgroundTransparency = 1.000
+FSOff.LayoutOrder = 5
+FSOff.Position = UDim2.new(-0.0333333351, 0, 0, 0)
+FSOff.Size = UDim2.new(0, 30, 0, 30)
+FSOff.Visible = false
+FSOff.ZIndex = 2
+FSOff.Image = "rbxassetid://3926305904"
+FSOff.ImageRectOffset = Vector2.new(924, 724)
+FSOff.ImageRectSize = Vector2.new(36, 36)
+
+FSInfo.Name = "FSInfo"
+FSInfo.Parent = FSFrame
+FSInfo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FSInfo.BackgroundTransparency = 1.000
+FSInfo.Position = UDim2.new(1.29999995, 0, 0, 0)
+FSInfo.Size = UDim2.new(0, 126, 0, 30)
+FSInfo.Font = Enum.Font.SourceSansItalic
+FSInfo.Text = "-- \" . \" at end of (entire) sentence"
+FSInfo.TextColor3 = Color3.fromRGB(255, 255, 255)
+FSInfo.TextSize = 14.000
+FSInfo.TextWrapped = true
+FSInfo.TextXAlignment = Enum.TextXAlignment.Left
+
+SAPFrame.Name = "SAPFrame"
+SAPFrame.Parent = MainFrame
+SAPFrame.BackgroundColor3 = Color3.fromRGB(43, 43, 52)
+SAPFrame.BorderSizePixel = 0
+SAPFrame.Position = UDim2.new(0.627539515, 0, 0.515151501, 0)
+SAPFrame.Size = UDim2.new(0, 30, 0, 30)
+
+ToggleSAP.Name = "ToggleSAP"
+ToggleSAP.Parent = SAPFrame
+ToggleSAP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleSAP.BackgroundTransparency = 1.000
+ToggleSAP.Size = UDim2.new(0, 30, 0, 30)
+ToggleSAP.ZIndex = 3
+ToggleSAP.Font = Enum.Font.SourceSans
+ToggleSAP.Text = ""
+ToggleSAP.TextColor3 = Color3.fromRGB(0, 0, 0)
+ToggleSAP.TextSize = 14.000
+
+SAPOn.Name = "SAPOn"
+SAPOn.Parent = SAPFrame
+SAPOn.BackgroundTransparency = 1.000
+SAPOn.LayoutOrder = 4
+SAPOn.Position = UDim2.new(-7.4505806e-09, 0, 0, 0)
+SAPOn.Size = UDim2.new(0, 30, 0, 30)
+SAPOn.ZIndex = 2
+SAPOn.Image = "rbxassetid://3926305904"
+SAPOn.ImageRectOffset = Vector2.new(644, 204)
+SAPOn.ImageRectSize = Vector2.new(36, 36)
+
+SAPOff.Name = "SAPOff"
+SAPOff.Parent = SAPFrame
+SAPOff.BackgroundTransparency = 1.000
+SAPOff.LayoutOrder = 5
+SAPOff.Size = UDim2.new(0, 30, 0, 30)
+SAPOff.Visible = false
+SAPOff.ZIndex = 2
+SAPOff.Image = "rbxassetid://3926305904"
+SAPOff.ImageRectOffset = Vector2.new(924, 724)
+SAPOff.ImageRectSize = Vector2.new(36, 36)
+
+SAPInfo.Name = "SAPInfo"
+SAPInfo.Parent = SAPFrame
+SAPInfo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SAPInfo.BackgroundTransparency = 1.000
+SAPInfo.Position = UDim2.new(1.29999995, 0, 0, 0)
+SAPInfo.Size = UDim2.new(0, 126, 0, 30)
+SAPInfo.Font = Enum.Font.SourceSansItalic
+SAPInfo.Text = "-- Space after punctuation"
+SAPInfo.TextColor3 = Color3.fromRGB(255, 255, 255)
+SAPInfo.TextSize = 14.000
+SAPInfo.TextWrapped = true
+SAPInfo.TextXAlignment = Enum.TextXAlignment.Left
+
+CIFrame.Name = "CIFrame"
+CIFrame.Parent = MainFrame
+CIFrame.BackgroundColor3 = Color3.fromRGB(43, 43, 52)
+CIFrame.BorderSizePixel = 0
+CIFrame.Position = UDim2.new(0.627539515, 0, 0.688311696, 0)
+CIFrame.Size = UDim2.new(0, 30, 0, 30)
+
+ToggleCI.Name = "ToggleCI"
+ToggleCI.Parent = CIFrame
+ToggleCI.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleCI.BackgroundTransparency = 1.000
+ToggleCI.Size = UDim2.new(0, 30, 0, 30)
+ToggleCI.ZIndex = 3
+ToggleCI.Font = Enum.Font.SourceSans
+ToggleCI.Text = ""
+ToggleCI.TextColor3 = Color3.fromRGB(0, 0, 0)
+ToggleCI.TextSize = 14.000
+
+CIOn.Name = "CIOn"
+CIOn.Parent = CIFrame
+CIOn.BackgroundTransparency = 1.000
+CIOn.LayoutOrder = 4
+CIOn.Position = UDim2.new(-7.4505806e-09, 0, 0, 0)
+CIOn.Size = UDim2.new(0, 30, 0, 30)
+CIOn.ZIndex = 2
+CIOn.Image = "rbxassetid://3926305904"
+CIOn.ImageRectOffset = Vector2.new(644, 204)
+CIOn.ImageRectSize = Vector2.new(36, 36)
+
+CIOff.Name = "CIOff"
+CIOff.Parent = CIFrame
+CIOff.BackgroundTransparency = 1.000
+CIOff.LayoutOrder = 5
+CIOff.Size = UDim2.new(0, 30, 0, 30)
+CIOff.Visible = false
+CIOff.ZIndex = 2
+CIOff.Image = "rbxassetid://3926305904"
+CIOff.ImageRectOffset = Vector2.new(924, 724)
+CIOff.ImageRectSize = Vector2.new(36, 36)
+
+CIInfo.Name = "CIInfo"
+CIInfo.Parent = CIFrame
+CIInfo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CIInfo.BackgroundTransparency = 1.000
+CIInfo.Position = UDim2.new(1.29999995, 0, 0, 0)
+CIInfo.Size = UDim2.new(0, 126, 0, 30)
+CIInfo.Font = Enum.Font.SourceSansItalic
+CIInfo.Text = "-- Capitalise i's"
+CIInfo.TextColor3 = Color3.fromRGB(255, 255, 255)
+CIInfo.TextSize = 14.000
+CIInfo.TextWrapped = true
+CIInfo.TextXAlignment = Enum.TextXAlignment.Left
+
+Msg.Name = "Msg"
+Msg.Parent = MainFrame
+Msg.BackgroundColor3 = Color3.fromRGB(31, 31, 38)
+Msg.BorderSizePixel = 0
+Msg.Position = UDim2.new(0.0406320542, 0, 0.285714269, 0)
+Msg.Size = UDim2.new(0, 232, 0, 34)
+Msg.Font = Enum.Font.SourceSansItalic
+Msg.PlaceholderColor3 = Color3.fromRGB(93, 92, 109)
+Msg.PlaceholderText = "RightAlt to type..."
+Msg.Text = ""
+Msg.TextColor3 = Color3.fromRGB(255, 255, 255)
+Msg.TextSize = 14.000
+Msg.TextWrapped = true
+
+UICorner_2.CornerRadius = UDim.new(0, 7)
+UICorner_2.Parent = Msg
+
+Send.Name = "Send"
+Send.Parent = MainFrame
+Send.BackgroundColor3 = Color3.fromRGB(43, 43, 52)
+Send.Position = UDim2.new(0.0406320542, 0, 0.471861482, 0)
+Send.Size = UDim2.new(0, 232, 0, 33)
+Send.Font = Enum.Font.SourceSans
+Send.Text = "Send"
+Send.TextColor3 = Color3.fromRGB(255, 255, 255)
+Send.TextSize = 20.000
+
+UICorner_3.CornerRadius = UDim.new(0, 7)
+UICorner_3.Parent = Send
+
+MsgInfo.Name = "MsgInfo"
+MsgInfo.Parent = MainFrame
+MsgInfo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MsgInfo.BackgroundTransparency = 1.000
+MsgInfo.Position = UDim2.new(0.0406320542, 0, 0.160006702, 0)
+MsgInfo.Size = UDim2.new(0, 232, 0, 30)
+MsgInfo.Font = Enum.Font.SourceSansItalic
+MsgInfo.Text = "-- text to be gramm-afied!"
+MsgInfo.TextColor3 = Color3.fromRGB(255, 255, 255)
+MsgInfo.TextSize = 20.000
+MsgInfo.TextXAlignment = Enum.TextXAlignment.Left
+
+HistoryFrame.Name = "History"
+HistoryFrame.Parent = BG
+HistoryFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HistoryFrame.BackgroundTransparency = 1.000
+HistoryFrame.Position = UDim2.new(0, 0, 0.112554178, 0)
+HistoryFrame.Size = UDim2.new(0, 443, 0, 204)
+HistoryFrame.Visible = false
+
+ScrollingFrame.Parent = HistoryFrame
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrame.BackgroundTransparency = 1.000
+ScrollingFrame.BorderSizePixel = 0
+ScrollingFrame.Position = UDim2.new(0.0158013552, 0, 0, 0)
+ScrollingFrame.Size = UDim2.new(0, 427, 0, 199)
+ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
+ScrollingFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
+ScrollingFrame.ScrollBarImageColor3 = Color3.fromRGB(38, 38, 47)
+
+UIListLayout.Parent = ScrollingFrame
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Bottom
+UIListLayout.Padding = UDim.new(0, 2)
+
+NewMsg.Name = "NewMsg"
+NewMsg.Parent = ScrollingFrame
+NewMsg.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NewMsg.BackgroundTransparency = 1.000
+NewMsg.Position = UDim2.new(0, 0, 0.130653262, 0)
+NewMsg.Size = UDim2.new(0, 427, 0, 16)
+NewMsg.Visible = false
+NewMsg.Font = Enum.Font.SourceSansSemibold
+NewMsg.Text = "[NEW]: Hello I am username."
+NewMsg.TextColor3 = Color3.fromRGB(82, 82, 99)
+NewMsg.TextSize = 16.000
+NewMsg.TextWrapped = true
+NewMsg.TextXAlignment = Enum.TextXAlignment.Left
+NewMsg.TextYAlignment = Enum.TextYAlignment.Bottom
+NewMsg.AutomaticSize = Enum.AutomaticSize.Y
+
+OldMsg.Name = "OldMsg"
+OldMsg.Parent = ScrollingFrame
+OldMsg.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+OldMsg.BackgroundTransparency = 1.000
+OldMsg.Size = UDim2.new(0, 427, 0, 16)
+OldMsg.Visible = false
+OldMsg.Font = Enum.Font.SourceSansSemibold
+OldMsg.Text = "[OLD]: hello i am username"
+OldMsg.TextColor3 = Color3.fromRGB(43, 43, 52)
+OldMsg.TextSize = 16.000
+OldMsg.TextWrapped = true
+OldMsg.TextXAlignment = Enum.TextXAlignment.Left
+OldMsg.TextYAlignment = Enum.TextYAlignment.Bottom
+OldMsg.AutomaticSize = Enum.AutomaticSize.Y
+
+FillerTopBar.Name = "FillerTopBar"
+FillerTopBar.Parent = TopBar
+FillerTopBar.BackgroundColor3 = Color3.fromRGB(32, 32, 39)
+FillerTopBar.BorderSizePixel = 0
+FillerTopBar.Position = UDim2.new(0, 0, 0.730769396, 0)
+FillerTopBar.Size = UDim2.new(0, 443, 0, 26)
+
+Main.Name = "Main"
+Main.Parent = FillerTopBar
+Main.BackgroundColor3 = Color3.fromRGB(53, 53, 65)
+Main.Position = UDim2.new(0.0406320542, 0, 0.113905102, 0)
+Main.Size = UDim2.new(0, 56, 0, 20)
+Main.Font = Enum.Font.SourceSans
+Main.Text = "Main"
+Main.TextColor3 = Color3.fromRGB(255, 255, 255)
+Main.TextSize = 14.000
+
+UICorner_4.CornerRadius = UDim.new(0, 3)
+UICorner_4.Parent = Main
+
+History.Name = "History"
+History.Parent = FillerTopBar
+History.BackgroundColor3 = Color3.fromRGB(43, 43, 52)
+History.Position = UDim2.new(0.203160271, 0, 0.113905102, 0)
+History.Size = UDim2.new(0, 56, 0, 20)
+History.Font = Enum.Font.SourceSans
+History.Text = "History"
+History.TextColor3 = Color3.fromRGB(255, 255, 255)
+History.TextSize = 14.000
+
+UICorner_5.CornerRadius = UDim.new(0, 3)
+UICorner_5.Parent = History
+
+UICorner_6.Parent = TopBar
+
+Title.Name = "Title"
+Title.Parent = TopBar
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.BorderSizePixel = 0
+Title.Size = UDim2.new(0, 443, 0, 27)
+Title.Font = Enum.Font.SourceSansItalic
+Title.Text = "grammar chat; professionalism"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 20.000
+
+Minimise.Name = "Minimise"
+Minimise.Parent = TopBar
+Minimise.BackgroundTransparency = 1.000
+Minimise.BorderSizePixel = 0
+Minimise.LayoutOrder = 6
+Minimise.Position = UDim2.new(0.92437923, 0, 0.0405405462, 0)
+Minimise.Size = UDim2.new(0, 25, 0, 25)
+Minimise.ZIndex = 2
+Minimise.Image = "rbxassetid://3926307971"
+Minimise.ImageRectOffset = Vector2.new(884, 284)
+Minimise.ImageRectSize = Vector2.new(36, 36)
+
+Maximise.Name = "Maximise"
+Maximise.Parent = TopBar
+Maximise.BackgroundTransparency = 1.000
+Maximise.BorderSizePixel = 0
+Maximise.LayoutOrder = 3
+Maximise.Position = UDim2.new(0.92437923, 0, 0.0405404568, 0)
+Maximise.Size = UDim2.new(0, 25, 0, 25)
+Maximise.ZIndex = 2
+Maximise.Image = "rbxassetid://3926307971"
+Maximise.ImageRectOffset = Vector2.new(324, 364)
+Maximise.ImageRectSize = Vector2.new(36, 36)
+Maximise.Visible = false
+
+ToggleUI.Name = "ToggleUI"
+ToggleUI.Parent = TopBar
+ToggleUI.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleUI.BackgroundTransparency = 1.000
+ToggleUI.BorderSizePixel = 0
+ToggleUI.Position = UDim2.new(0.909706533, 0, 0, 0)
+ToggleUI.Size = UDim2.new(0, 40, 0, 26)
+ToggleUI.Font = Enum.Font.SourceSans
+ToggleUI.Text = ""
+ToggleUI.TextColor3 = Color3.fromRGB(0, 0, 0)
+ToggleUI.TextSize = 14.000
+ToggleUI.ZIndex = 3
+
+Hotbar.Name = "Hotbar"
+Hotbar.Parent = TopBar
+Hotbar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Hotbar.BackgroundTransparency = 1.000
+Hotbar.Size = UDim2.new(0, 409, 0, 37)
+Hotbar.Visible = false
+
+MsgHB.Name = "Msg"
+MsgHB.Parent = Hotbar
+MsgHB.BackgroundColor3 = Color3.fromRGB(31, 31, 38)
+MsgHB.BorderSizePixel = 0
+MsgHB.Position = UDim2.new(0.0220048893, 0, 0.135135129, 0)
+MsgHB.Size = UDim2.new(0, 165, 0, 26)
+MsgHB.Font = Enum.Font.SourceSansItalic
+MsgHB.PlaceholderColor3 = Color3.fromRGB(93, 92, 109)
+MsgHB.PlaceholderText = "RightAlt to type..."
+MsgHB.Text = ""
+MsgHB.TextColor3 = Color3.fromRGB(255, 255, 255)
+MsgHB.TextSize = 14.000
+MsgHB.TextWrapped = true
+
+UICorner7.CornerRadius = UDim.new(0, 7)
+UICorner7.Parent = MsgHB
+
+HBTitle.Name = "HBTitle"
+HBTitle.Parent = Hotbar
+HBTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HBTitle.BackgroundTransparency = 1.000
+HBTitle.BorderSizePixel = 0
+HBTitle.Position = UDim2.new(0.425427884, 0, 0.135135129, 0)
+HBTitle.Size = UDim2.new(0, 235, 0, 27)
+HBTitle.Font = Enum.Font.SourceSansItalic
+HBTitle.Text = "grammar chat; professionalism"
+HBTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+HBTitle.TextSize = 20.000
+HBTitle.TextWrapped = true
+
+--Categories
+for _, v in pairs(FillerTopBar:GetChildren()) do
+	v.MouseButton1Click:Connect(function()
+		for _, x in pairs(FillerTopBar:GetChildren()) do
+			--Change colours
+			if x.Name ~= v.Name then
+				x.BackgroundColor3 = Color3.fromRGB(43, 43, 52)
+			else
+				x.BackgroundColor3 = Color3.fromRGB(53, 53, 65)
+			end
+			--Toggle frames
+			for _, y in pairs(BG:GetChildren()) do
+				if y.Name ~= "UICorner" then
+					if y.Name == v.Name then
+						y.Visible = true
+					else
+						y.Visible = false
+					end
+				end
+			end
+		end
+	end)
+end
+
+local optFolder = Instance.new("Folder")
+optFolder.Name = "Options"
+optFolder.Parent = MainFrame
+--Option buttons
+for _, v in pairs(MainFrame:GetChildren()) do
+	if string.find(v.Name,"Frame") then
+		local status = Instance.new("BoolValue")
+		status.Name = v.Name
+		status.Parent = optFolder
+		status.Value = true
+		for _, x in pairs(v:GetChildren()) do
+			if x:IsA("TextButton") then
+				x.MouseButton1Click:Connect(function()
+					for _, y in pairs(v:GetChildren()) do
+						if string.find(y.Name,"Off") then
+							if y.Visible then
+								y.Visible = false -- turned on (turned off symbol invisible)
+								optFolder:FindFirstChild(y.Parent.Name).Value = true -- turned on
+							else
+								y.Visible = true -- turned off (turned on symbol invisible)
+								optFolder:FindFirstChild(y.Parent.Name).Value = false -- turned off
+							end
+						elseif string.find(y.Name,"On") then
+							if y.Visible then
+								y.Visible = false -- turned on (turned off symbol invisible)
+								optFolder:FindFirstChild(y.Parent.Name).Value = true -- turned on
+							else
+								y.Visible = true -- turned off (turned on symbol invisible)
+								optFolder:FindFirstChild(y.Parent.Name).Value = false -- turned off
+							end
+						end
+					end
+				end)
+			end
+		end
+	end
+end
+
+--Grammar function
+function grammar(msg)
+	--Capitalise first letter
+	if optFolder.CFSFrame.Value then
+		msg = msg:sub(0,1):upper() .. msg:sub(2, #msg)
+	end
+
+	local x = string.find(msg, "%p")
+	if x then
+		--Add space after punctuation
+		if optFolder.SAPFrame.Value then
+			local y = string.find(msg, "%p%a")
+			while y do
+				wait()
+				msg = msg:sub(0,y,y) .. " " .. msg:sub(y+1, #msg)
+				y = string.find(msg, "%p%a")
+			end
+		end
+		--Capitalise after full stop
+		if optFolder.CAFSFrame.Value then
+			if msg:sub(x,x) == "." then
+				while x do
+					wait()
+					if msg:sub(x,x) == "." then
+						msg = msg:sub(0,x-1) .. msg:sub(x, x+2):upper() .. msg:sub(x+3, #msg)
+						x = string.find(msg, "%p", x+1)
+					end
+				end
+			end
+		end
+	end
+	--Remove unecessary last letter
+	if msg:sub(#msg,#msg) ~= "." then
+		if string.find(msg:sub(#msg,#msg),"%p") or string.find(msg:sub(#msg,#msg),"%s") then
+			msg = msg:sub(0,#msg-1)
+		end
+	end
+	--Remove unwanted spaces
+	local y = string.find(msg, "' ") -- for "I' m" to "I'm"
+	while y do
+		wait()
+		msg = msg:sub(0,y,y) .. msg:sub(y+2,#msg)
+		y = string.find(msg, "' ")
+	end
+	--Capitalise i's
+	if optFolder.CIFrame.Value then
+		msg = string.gsub(msg, " i ", " I ")
+		msg = string.gsub(msg, ",i ", ",I ")
+		msg = string.gsub(msg, " i,", " I,")
+		msg = string.gsub(msg, " i;", " I;")
+		msg = string.gsub(msg, " i:", " I:")
+		msg = string.gsub(msg, " i'", " I'")
+	end
+	--Full stop at the end of the sentence
+	if optFolder.FSFrame.Value then
+		if msg:sub(#msg) ~= "." then
+			msg = msg.."."
+		end
+	end
+	return msg
+end
+
+--Update message history function
+function msgHistory(oldMsg,newMsg)
+	--Add messages
+	local oldClone = OldMsg:Clone()
+	oldClone.Text = "[OLD]: "..oldMsg
+	oldClone.Parent = ScrollingFrame
+	oldClone.Visible = true
+	local newClone = NewMsg:Clone()
+	newClone.Text = "[NEW]: "..newMsg
+	newClone.Parent = ScrollingFrame
+	newClone.Visible = true
+	--Update scroll bar position to bottom
+	ScrollingFrame.CanvasPosition = Vector2.new(0,1000000000000000)
+end
+
+--Send message
+Send.MouseButton1Click:connect(function()
+	if Msg.Text ~= "" then
+		local msg = Msg.Text
+		local grammarMsg = grammar(msg)
+		game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(grammarMsg, "All")
+		msgHistory(msg,grammarMsg)
+		Msg.Text = ""
+	end
+end)
+
+--Input keybind
+game:GetService("UserInputService").InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.RightAlt then
+		if BG.Visible then
+			Msg:CaptureFocus()
+			Msg.Text = ""
+		else
+			MsgHB:CaptureFocus()
+			MsgHB.Text = ""
+		end
+	end
+end)
+--Enter keybind
+Msg.FocusLost:Connect(function(enterPressed, inputThatCausedFocusLost)
+	if enterPressed then
+		if Msg.Text ~= "" then
+			local msg = Msg.Text
+			local grammarMsg = grammar(msg)
+			game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(grammarMsg, "All")
+			msgHistory(msg,grammarMsg)
+			Msg.Text = ""
+		end
+	end
+end)
+MsgHB.FocusLost:Connect(function(enterPressed, inputThatCausedFocusLost)
+	if enterPressed then
+		if MsgHB.Text ~= "" then
+			local msg = MsgHB.Text
+			local grammarMsg = grammar(msg)
+			game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(grammarMsg, "All")
+			msgHistory(msg,grammarMsg)
+			MsgHB.Text = ""
+		end
+	end
+end)
+
+function toggleUI()
+	--Toggle BG
+	BG.Visible = not BG.Visible
+	--Toggle categories
+	FillerTopBar.Visible = not FillerTopBar.Visible
+	--Toggle title
+	Title.Visible = not Title.Visible
+	--Toggle hotbar
+	Hotbar.Visible = not Hotbar.Visible
+	if BG.Visible then
+		Minimise.Visible = true
+		Maximise.Visible = false
+	else
+		Minimise.Visible = false
+		Maximise.Visible = true
+	end
+end
+
+--Toggle UI
+ToggleUI.MouseButton1Click:Connect(function()
+	toggleUI()
+end)
+--Keybind
+game:GetService("UserInputService").InputBegan:connect(function(input, processed)
+	if not processed then
+		if input.KeyCode == Enum.KeyCode.RightControl then
+			toggleUI()
+		end
+	end
+end)
+
+--Draggable
+local UserInputService = game:GetService("UserInputService")
+
+local gui = TopBar
+local dragging
+local dragInput
+local dragStart
+local startPos
+
+local function update(input)
+	local delta = input.Position - dragStart
+	gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+end
+
+gui.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+		dragging = true
+		dragStart = input.Position
+		startPos = gui.Position
+
+		input.Changed:Connect(function()
+			if input.UserInputState == Enum.UserInputState.End then
+				dragging = false
+			end
+		end)
+	end
+end)
+
+gui.InputChanged:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+		dragInput = input
+	end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+	if input == dragInput and dragging then
+		update(input)
+	end
+end)
